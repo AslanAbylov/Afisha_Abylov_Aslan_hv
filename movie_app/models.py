@@ -18,7 +18,7 @@ class Movie(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     duration = models.FloatField()
-    director = models.ManyToManyField(Director, null=True, blank=True, related_name='movie')
+    director = models.ForeignKey(Director, blank=True, null=True, related_name='movie', on_delete=models.CASCADE)
 
 
     def __str__(self):
